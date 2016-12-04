@@ -42,6 +42,7 @@ do
           end
           return self.sock:settimeout(t)
         end,
+        setkeepalive = function(self) self:setoption("keepalive", true) end,
         sslhandshake = function(self, verify, opts)
           if opts == nil then
             opts = { }
